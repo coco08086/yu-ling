@@ -1,3 +1,99 @@
-<html>
-<p>還不錯
-</html>
+<!DOCTYPE html>
+<!-- saved from url=(0065)file:///C:/Users/coco0/OneDrive/%E6%A1%8C%E9%9D%A2/gay/index.html -->
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yu Ling的博客</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Yu Ling</div>
+        <div class="social-links">
+            <div class="dropdown">
+                <a href="file:///C:/Users/coco0/OneDrive/%E6%A1%8C%E9%9D%A2/gay/index.html#" id="discordLink">Discord</a>
+                <div class="dropdown-content" id="discordMenu">
+                    <a href="https://discord.gg/Z2rH4BbqQY" target="_blank">yee俱乐部</a>
+                    <a href="https://discord.gg/w9h68Qy8EC" target="_blank">羅莉控聚集地</a>
+                </div>
+            </div>
+            <a href="https://www.instagram.com/_dc_ylng._/" target="_blank" id="instagramLink">Instagram</a>
+        </div>
+    </header>
+
+    <div class="light-bar"></div>
+
+    <main>
+        <div class="intro">
+            <p class="name">Hello, I'm<br><span>Yu Ling</span></p>
+            <p>I'm currently a high school student.</p>
+            <div class="typing">
+                <p>I enjoy listening to light music and pop mus</p><span class="cursor"></span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Copyright © 2024 yu ling. All rights reserved.
+    </footer>
+
+    <script>
+        const texts = [
+            "I like playing games.\n",
+            "I enjoy listening to light music and pop music.\n",
+            "I also like assembling computers.\n"
+        ];
+        const typingElement = document.querySelector('.typing p');
+        const cursorElement = document.querySelector('.cursor');
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentText = texts[textIndex];
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                setTimeout(type, 1000); // 增加等待时间
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                setTimeout(type, 500); // 增加等待时间
+            } else {
+                setTimeout(type, isDeleting ? 50 : 100); // 稍微减慢打字速度
+            }
+        }
+
+        type();
+
+        const discordLink = document.getElementById('discordLink');
+        const discordMenu = document.getElementById('discordMenu');
+        let isMenuOpen = false;
+
+        discordLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (!isMenuOpen) {
+                discordMenu.classList.add('show');
+                isMenuOpen = true;
+            } else {
+                discordMenu.classList.remove('show');
+                isMenuOpen = false;
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!discordLink.contains(e.target) && !discordMenu.contains(e.target)) {
+                discordMenu.classList.remove('show');
+                isMenuOpen = false;
+            }
+        });
+    </script>
+
+</body></html>
