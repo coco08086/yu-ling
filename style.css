@@ -4,12 +4,11 @@ body {
     font-family: 'Dosis', sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 2.5em;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-
 header {
     display: flex;
     justify-content: space-between;
@@ -17,53 +16,44 @@ header {
     padding: 10px 20px;
     background-color: #222;
 }
-
 .logo {
     color: skyblue;
     font-weight: 700;
 }
-
 .social-links {
     display: flex;
     align-items: center;
 }
-
 .social-links a, .social-links .dropdown > a {
     color: white;
     text-decoration: none;
-    font-size: 0.8em;
+    font-size: 0.5em;
     transition: background 0.3s;
     padding: 5px 10px;
     border-radius: 5px;
     margin-left: 10px;
 }
-
 #discordLink, #instagramLink {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     opacity: 0.7;
     transition: opacity 0.3s;
-    font-size: 1.2em;
+    font-size: 1em;
 }
-
 #discordLink:hover, #instagramLink:hover {
     opacity: 1;
 }
-
 #discordLink {
     background-image: linear-gradient(to right, skyblue, white);
 }
-
 #instagramLink {
     background-image: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
 }
-
 .dropdown {
     position: relative;
     display: inline-block;
 }
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -75,56 +65,47 @@ header {
     transition: opacity 0.7s ease;
     white-space: nowrap;
 }
-
 .dropdown-content a {
     color: rgb(56, 56, 56);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    font-size: 0.8em;
+    font-size: 0.5em;
 }
-
 .dropdown-content.show {
     display: block;
     opacity: 1;
 }
-
 main {
     flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .intro {
     text-align: center;
 }
-
 .name {
-    font-size: 3rem;
+    font-size: 60px;
     line-height: 1.2;
     font-weight: 700;
 }
-
 .name span {
     color: skyblue;
     display: block;
 }
-
 .typing {
-    min-height: 5.7em;
+    height: 5.7em;
     overflow: hidden;
     margin-top: 20px;
     position: relative;
 }
-
 .typing p {
     margin: 0;
     display: inline-block;
     line-height: 1.9em;
     white-space: pre-wrap;
 }
-
 .cursor {
     display: inline-block;
     width: 3px;
@@ -134,20 +115,17 @@ main {
     animation: blink 1.0s infinite;
     vertical-align: middle;
 }
-
 @keyframes blink {
     0% { opacity: 0; }
     50% { opacity: 1; }
     100% { opacity: 0; }
 }
-
 footer {
     text-align: left;
     padding: 10px 20px;
     background-color: #222;
-    font-size: 0.8em;
+    font-size: 0.5em;
 }
-
 .light-bar {
     width: 100%;
     height: 5px;
@@ -163,31 +141,7 @@ footer {
     animation: rainbow-move 20s linear infinite;
     margin-bottom: 20px;
 }
-
 @keyframes rainbow-move {
     0% { background-position: 0% 0%; }
     100% { background-position: 400% 0%; }
-}
-
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-    
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .social-links {
-        margin-top: 10px;
-    }
-    
-    .name {
-        font-size: 2.5rem;
-    }
-    
-    .typing {
-        min-height: auto;
-    }
 }
