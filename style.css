@@ -121,10 +121,18 @@ main {
     100% { opacity: 0; }
 }
 footer {
-    text-align: left;
-    padding: 10px 20px;
-    background-color: #222;
-    font-size: 0.5em;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+footer p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 14px;
 }
 .light-bar {
     width: 100%;
